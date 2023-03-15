@@ -13,6 +13,7 @@ import {
     // CustomButton,
   } from 'react-native';
 
+  import { useFonts } from 'expo-font';
 
   // import { createDrawerNavigator } from "@react-navigation/drawer";
   // import { NavigationContainer } from "@react-navigation/native";
@@ -41,6 +42,15 @@ import {
       //navigation.goBack();
   }
 
+  const [loaded]=useFonts({
+        
+    Sarabun:require('../../assets/fonts/Sarabun-Medium.ttf')
+  });
+  
+  
+  if(!loaded){
+    return null;
+  }
     return (
         <View
           style={styles.container}
@@ -124,9 +134,9 @@ import {
     boxcontent:{
       width:"40%",
       backgroundColor:"#9BCCA5",
-      height:"8%",
-      top:380,
-      borderRadius:30,
+      height:170,
+      top:440,
+      // borderRadius:30,
       // position: 'absolute',
       // justifyContent: 'center',
       // alignItems: 'center',
@@ -135,8 +145,9 @@ import {
     pikFresh_box:{
       width:"50%",
       backgroundColor:"#ffffff",
-      // height:"0%",
-      top:390,
+      // height:"5%",
+      // top:450,
+      bottom:-415,
       // borderRadius:30,
       // position: 'absolute',
       // justifyContent: 'center',
@@ -149,21 +160,21 @@ import {
       // justifyContent: 'center',
       
       left:10,
-      top:-85,
+      top:-100,
     },
     boxtext1:{
       color:"#000000",
       width:"60%",
       left:45,
       top:10,
-      fontFamily:"JosefinSans-SemiBold"
+      fontFamily:"Sarabun"
     },
     boxtext2:{
       color:"#000000",
       width:"60%",
       left:52,
       top:30,
-      fontFamily:"JosefinSans-SemiBold"
+      fontFamily:"Sarabun"
       
     },
     boxtext3:{
@@ -171,7 +182,7 @@ import {
       width:"60%",
       top:50,
       left:45,
-      fontFamily:"JosefinSans-SemiBold"
+      fontFamily:"Sarabun"
     },
 
     text1:{
@@ -179,29 +190,29 @@ import {
       left:37,
       width:"40%",
       top:180,
-      fontFamily:"JosefinSans-SemiBold"
+      fontFamily:"Sarabun"
     },
     text2:{
       textAlign:"center",
       // position:"absolute",
       width:"100%",
-      top:420,
+      top:480,
       left:70,
       color:"#000000",
-      fontFamily:"JosefinSans-SemiBold"
+      fontFamily:"Sarabun"
     },
     about_text:{
       color:"#000000",
-      fontFamily:"JosefinSans-SemiBold",
-      top:400,
+      fontFamily:"Sarabun",
+      top:430,
       left:70,
     },
     pikFresh_text:{
       color:"#000000",
       width:"70%",
       left:42,
-      top:38,
-      fontFamily:"JosefinSans-SemiBold",
+      top:90,
+      fontFamily:"Sarabun",
     },
     inner:{
         backgroundColor:"#9BCCA5",
@@ -215,7 +226,7 @@ import {
         height:700,
         width:'80%',
         transform:[{rotate:'245deg'}],
-        top:-152,  
+        top:-90,  
     },
     inner2:{
         backgroundColor:"#000000",
@@ -234,7 +245,7 @@ import {
     text:{
         fontSize:55,
         color:'#000000',
-        fontFamily:'JosefinSans-Bold',
+        fontFamily:'Sarabun',
         textAlign:'center',
         top:90,
     },

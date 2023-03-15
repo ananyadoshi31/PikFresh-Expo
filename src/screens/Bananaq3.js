@@ -61,7 +61,7 @@ import {
               Amount of black/brown patches?
               </Text>
               <Pressable style={styles.box1}
-                onPress={()=>navigation.navigate('Reportanana',{
+                onPress={()=>navigation.navigate('ReportBanana',{
                   paramKey4:route.params.paramKey2,
                   paramKey5:route.params.paramKey3,
                   paramKey6:optionBananaq31

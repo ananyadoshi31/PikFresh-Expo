@@ -17,33 +17,6 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { firebase } from '../../config';
 import { useFonts } from 'expo-font';
-// import { useFonts } from 'expo-font';
-// import Support from "./Support";
-//import { createDrawerNavigator } from "@react-navigation/drawer";
-// import "@fontsource/oleo-script";
-//import { ImageBackground } from "react-native";
-//import CustomButton from '../utils/CustomButton';
-// import AsyncStorage from "@react-native-async-storage/async-storage";
-// import SQLite from 'react-native-sqlite-storage';
-// import { useSelector, useDispatch } from "react-redux";
-// import { setName,setAge } from "../redux/actions";
-// import PushNotification from "react-native-push-notification";
-
-// const db =SQLite.openDatabase(
-//     {
-//         name:'MainDB',
-//         location:'default',
-//     },
-//     ()=>{ },
-//     error=>{console.log(error)}
-// );
-//const Drawer = createDrawerNavigator();
-
-
-// let customFonts = {
-//   'OleoScript-Regular': require('../../assets/fonts/OleoScript-Regular.ttf'),
-//   // 'Inter-SemiBoldItalic': 'https://rsms.me/inter/font-files/Inter-SemiBoldItalic.otf?v=3.12',
-// };
 export default function Main({navigation})
 {
   
@@ -78,14 +51,6 @@ export default function Main({navigation})
     }, [])
 
 
-    // const [fontsLoaded] = useFonts({
-    //   'OleoScript-Regular': require('../../assets/fonts/OleoScript-Regular.ttf'),
-    // });
-    // render() {
-    //   if (!this.state.fontsLoaded) {
-    //     return null;
-    //   }
-
     const [loaded]=useFonts({
       OleoScriptRegular:require('../../assets/fonts/OleoScript-Regular.ttf'),
       BreeSerifRegular:require('../../assets/fonts/BreeSerif-Regular.ttf'),
@@ -107,12 +72,7 @@ export default function Main({navigation})
               Hello, {name.name}
             </Text>
 
-            
-            {/* <Pressable style={styles.login}
-              onPress={onPressHandlerLogin}
-            >
-              <Text style={styles.loginbutton}>Login</Text>
-            </Pressable> */}
+      
             <Text style={styles.title}>
                 PikFresh
             </Text>
@@ -125,10 +85,7 @@ export default function Main({navigation})
         <Image style = {styles.logo} source = {require('../../assets/scan_img.png')} />
           <Text style={styles.stylebutton1}>Scan</Text>
         </Pressable>
-        {/* <Pressable style={styles.button2} >
-        <Image style = {styles.logo} source = {require('../../assets/report_img.png')} />
-          <Text style={styles.stylebutton2}>Reports</Text>
-        </Pressable> */}
+
         <Pressable style={styles.button3}
             onPress={onPressHandlerSupport} 
         >
@@ -271,7 +228,7 @@ export default function Main({navigation})
     },
     loginbutton:{
       color:'#000000',
-      fontFamily:'JosefinSans-SemiBold',
+      fontFamily:'OleoScriptRegular',
       fontSize:22,
       width:100,
       height:45,
@@ -294,7 +251,7 @@ export default function Main({navigation})
     },
     usertxt:{
       fontSize:20,
-      fontFamily:'JosefinSansSemiBold',
+      fontFamily:'OleoScriptRegular',
       fontWeight:'bold',
       left:270,
       top:30,

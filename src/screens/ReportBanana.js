@@ -1,10 +1,21 @@
 import { View, Text, Alert,StyleSheet,Image } from 'react-native'
 import React from 'react'
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable'
-
+import { useFonts } from 'expo-font';
 // global.var1;
 const ReportBanana = ({route}) => {
+  
+  const [loaded]=useFonts({
+    
+    OleoScriptRegular:require('../../assets/fonts/OleoScript-Regular.ttf'),
+    BreeSerifRegular:require('../../assets/fonts/BreeSerif-Regular.ttf'),
+    Barlow:require('../../assets/fonts/BarlowCondensed-Regular.ttf'),
+  });
+  
 
+  if(!loaded){
+    return null;
+  }
         if(route.params.paramKey4=='Black' || route.params.paramKey4=='Brown')
         {
             if(route.params.paramKey5=='darkyellow')
@@ -191,7 +202,8 @@ const styles = StyleSheet.create({
       fontFamily:'JosefinSans-SemiBold',
       textAlign:'center',
       padding:10,
-      top:30
+      top:30,
+      fontFamily:'BreeSerifRegular'
       // marginBottom: 13,  
   },
       boxcontent:{
@@ -224,10 +236,11 @@ const styles = StyleSheet.create({
     },
     reporttxt:{
       color:'#000000',
-      fontSize:24,
+      fontSize:25,
       textAlign:'center',
       padding:10,
       bottom:40,
+      fontFamily:'Barlow'
     },
 
 })

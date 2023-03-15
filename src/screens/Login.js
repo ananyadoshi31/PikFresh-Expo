@@ -12,11 +12,8 @@ import {
     TouchableOpacity,
 
   } from 'react-native';
-// import { TouchableOpacity } from "react-native-gesture-handler";
 import { firebase } from '../../config';
 import { useFonts } from 'expo-font';
-// import { useNavigation } from "@react-navigation/native";
-
 
 export default function Login({navigation})
 {
@@ -52,8 +49,8 @@ export default function Login({navigation})
       }
 
       const [loaded]=useFonts({
-        OleoScriptRegular:require('../../assets/fonts/OleoScript-Regular.ttf'),
-        BreeSerifRegular:require('../../assets/fonts/BreeSerif-Regular.ttf'),
+        
+        Sarabun:require('../../assets/fonts/Sarabun-Medium.ttf')
       });
       
     
@@ -76,7 +73,7 @@ return (
             <TextInput
                 style={styles.input}
                 onChangeText={(email)=>setEmail(email)}
-                placeholder="Email"
+                placeholder=" Email"
                 autoCapitalize="none"
                 autoCorrect={false}
             />
@@ -86,7 +83,7 @@ return (
             <TextInput
                 style={styles.input}
                 onChangeText={(password)=>setPassword(password)}
-                placeholder="password"
+                placeholder=" Password"
                 autoCapitalize="none"
                 autoCorrect={false}
                 secureTextEntry={true}
@@ -99,10 +96,10 @@ return (
                 <Text 
                     style={{
                         fontSize:15,
-                        fontFamily:'BreeSerifRegular',
+                        fontFamily:'Sarabun',
                         color:'#000000',
-                        left:45,
-                        bottom:-20
+                        left:65,
+                        bottom:-25
 
                     }}
                 >
@@ -118,7 +115,7 @@ return (
             <Text 
                 style={{
                     fontSize:15,
-                    fontFamily:'BreeSerifRegular',
+                    fontFamily:'Sarabun',
                     color:'#000000',
                     bottom:-55,
                     textAlign:'center',
@@ -165,7 +162,7 @@ return (
    text:{
     fontSize:28,
     color:'#000000',
-    fontFamily:'BreeSerifRegular',
+    fontFamily:'Sarabun',
     textAlign:'center',
     top:10,
    },
@@ -187,21 +184,23 @@ return (
     backgroundColor: '#ffffff',
     borderColor: '#9BCCA5',
     borderWidth: 1,
-    left:45,
+    alignSelf:'center',
     borderRadius:15,
+
+
    },
    credential:{
-    top:20,
+    top:40,
     padding:20,
-    left:25,
-    fontSize:25,
+    left:45,
+    fontSize:22,
     color:'#000000',
-    fontFamily:'BreeSerifRegular',
+    fontFamily:'Sarabun',
    },
    loginbutton:{
     height:48,
     width:146,
-    backgroundColor:'#9BCCA5',
+    backgroundColor:'#D9D9D9',
     borderRadius:15,
     bottom:-50,
     left:130
@@ -210,14 +209,14 @@ return (
     fontSize:20,
     textAlign:'center',
     color:'#000000',
-    fontFamily:'BreeSerifRegular',
-    top:7
+    fontFamily:'Sarabun',
+    top:4
    },
    text1:{
     color:"#000000",
-    fontFamily:'BreeSerifRegular',
+    fontFamily:'Sarabun',
     textAlign:'center',
-    top:32,
+    top:26,
     left:40,
 },
   })

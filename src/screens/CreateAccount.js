@@ -16,6 +16,7 @@ import {
 import { TouchableOpacity } from "react-native-gesture-handler";
 // import { RollInRight } from "react-native-reanimated";
 import { firebase } from '../../config';
+import { useFonts } from 'expo-font';
 
  // import "@fontsource/oleo-script";
   //import { ImageBackground } from "react-native";
@@ -66,10 +67,20 @@ export default function CreateAccount({navigation})
                 alert(error.message)
             })
       }
+
+      const [loaded]=useFonts({
+        
+        Sarabun:require('../../assets/fonts/Sarabun-Medium.ttf')
+      });
+      
+    
+      if(!loaded){
+        return null;
+      }
 return (
  
       <View style={styles.container}>
-        <Image style = {styles.loginphoto} source = {require('../../assets/createacc.png')} />
+        <Image style = {styles.loginphoto} source = {require('../../assets/1.png')} />
         <View style={styles.outer}>
         <Text style={styles.text}>
           Create New Account
@@ -81,7 +92,7 @@ return (
             </Text>
             <TextInput
                 style={styles.input}
-                placeholder="Name"
+                placeholder=" Name"
                 onChangeText={(name)=>setName(name)}
                 autoCorrect={false}
             />
@@ -90,7 +101,7 @@ return (
             </Text>
             <TextInput
                 style={styles.input}
-                placeholder="Email"
+                placeholder=" Email"
                 onChangeText={(email)=>setEmail(email)}
                 autoCorrect={false}
                 autoCapitalize="none"
@@ -102,7 +113,7 @@ return (
             </Text>
             <TextInput
                 style={styles.input}
-                placeholder="Password"
+                placeholder=" Password"
                 onChangeText={(password)=>setPassword(password)}
                 autoCorrect={false}
                 secureTextEntry={true}
@@ -116,7 +127,7 @@ return (
             <Text 
                 style={{
                     fontSize:15,
-                    fontFamily:'JosefinSans-SemiBold',
+                    fontFamily:'Sarabun',
                     color:'#000000',
                     bottom:-70,
                     textAlign:'center',
@@ -142,26 +153,26 @@ return (
   const styles = StyleSheet.create({
    container:{
     flex:1,
-    backgroundColor:'#9BCCA5'
+    backgroundColor:'#2b463c'
    },
    outer:{
     backgroundColor:'#D9D9D9',
     height:568,
-    top:280,
+    top:320,
     borderRadius:40,
     width:'100%'
    },
    inner:{
     backgroundColor:'#ffffff',
     height:514,
-    bottom:220,
+    bottom:180,
     borderRadius:40,
     width:'100%'
    },
    text:{
     fontSize:28,
     color:'#000000',
-    fontFamily:'JosefinSans-SemiBold',
+    fontFamily:'Sarabun',
     textAlign:'center',
     top:10,
    },
@@ -170,7 +181,7 @@ return (
     width: 680,
     height: 469,
     left: -130,
-    top: -83,
+    top: -40,
     marginBottom:-480,
     alignItems:'center',
     resizeMode: 'contain',
@@ -183,23 +194,23 @@ return (
     backgroundColor: '#ffffff',
     borderColor: '#9BCCA5',
     borderWidth: 1,
-    left:45,
+    alignSelf:'center',
     borderRadius:15,
    },
    credential:{
-    top:20,
+    top:25,
     padding:5,
-    left:50,
-    fontSize:25,
+    left:58,
+    fontSize:22,
     color:'#000000',
-    fontFamily:'JosefinSans-SemiBold',
+    fontFamily:'Sarabun',
    },
    loginbutton:{
     height:48,
     width:146,
-    backgroundColor:'#9BCCA5',
+    backgroundColor:'#D9D9D9',
     borderRadius:15,
-    bottom:-10,
+    bottom:-45,
     left:130,
     // padding:20,
    },
@@ -207,15 +218,15 @@ return (
     fontSize:20,
     textAlign:'center',
     color:'#000000',
-    fontFamily:'JosefinSans-SemiBold',
-    top:7,
+    fontFamily:'Sarabun',
+    top:4,
    },
    
     text1:{
         color:"#000000",
-        fontFamily:'JosefinSans-SemiBold',
+        fontFamily:'Sarabun',
         textAlign:'center',
-        top:32,
+        top:40,
         left:100,
     },
    
